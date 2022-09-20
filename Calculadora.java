@@ -7,9 +7,12 @@ public class Calculadora {
         int opc, opc2;
         //contador principal
         int  contador = 0;
+        //Variables de las operaciones
         double num1, num2, respuesta;
+        // variables para los porsentajes
         float pSuma, pRes, pMul, pDiv, contaSuma = 0, contaRes = 0, contaMul = 0, contaDiv = 0;
         do{
+            //Programa principal- Solicitud de datos 
             System.out.println("ingresa el primer numero");
             num1 = scan.nextDouble();
             System.out.println("ingresa el segundo numero");
@@ -22,7 +25,7 @@ public class Calculadora {
             System.out.println("4.Divicion");
             opc = scan.nextInt();
 
-            switch (opc){
+            switch (opc) {
                 case 1:
                     respuesta = num1 + num2;
                     System.out.println("Suma");
@@ -54,11 +57,11 @@ public class Calculadora {
 
             }
             contador++;
-            System.out.println(contador);
             System.out.println("¿Quieres iniciar de nuevo?");
             System.out.println("1.SI");
             System.out.println("2.NO");
             opc2 = scan.nextInt();
+            // Validacion para verificar si es posible terminar o no 
             if (opc2 == 1){
                 contador++;
             }else {
@@ -71,6 +74,7 @@ public class Calculadora {
 
 
         }while (contador < 7 || contador < 12);
+        //operaciones de para los porsentajes 
         pSuma = (contaSuma / contador) * 100;
         pRes = (contaRes / contador) * 100;
         pMul = (contaMul / contador) * 100;
