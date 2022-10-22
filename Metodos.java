@@ -1,61 +1,78 @@
-package Actividad3;
+package Actividad_4;
+
+import java.util.Scanner;
 
 public class Metodos {
 
-    double suma = 0, total, descuento,mensualidad=0;
-    void Asignar (double a){
-        suma = suma + a;
-    }
+    int NIP = 1234, cuenta;
+    double Total = 10000, retiro;
+    Scanner scan = new Scanner(System.in);
+    boolean ValidacionNip(int nip){
+        if (nip == NIP){
 
-    double mostrar() {
-        return suma;
-    }
+            return true;
 
-    double ValidacioEfectivo() {
-        if (suma <= 2000 || suma <= 4000) {
-            descuento = suma * .10;
-            total = suma - descuento;
-        } else if (suma > 4000 || suma <= 6000 ) {
-            descuento = suma * .20;
-            total = suma - descuento;
-        } else if (suma > 6000 ) {
-            descuento = suma * .30;
-            total = suma - descuento;
+
+        }else {
+
+            return false;
+
         }
-        return total;
     }
-    double ValidarTDC(){
-        descuento = suma * .25;
-        return descuento;
-    }
-    double ValidarDep(){
-        descuento = suma * .30;
-        return descuento;
-    }
-    void mesesTDC(int b){
+    void ValidacionMenu(int respuesta){
 
-        if(b == 1){
-            mensualidad = suma / 6;
-        }else if(b == 2) {
-            mensualidad = suma / 12;
+        switch (respuesta){
+            case 1:
+                double ingreso;
+                System.out.println("Abono");
+                System.out.println("¿Cuanto deseas abonar?");
+                ingreso = scan.nextDouble();
+                sumar(ingreso);
+                System.out.println("Tu nuevo Saldo es: " + mostrarTotal());
+                break;
+
+            case 2:
+                System.out.println("Consulta");
+                System.out.println("Tu saldo total es: " + mostrarTotal());
+                break;
+            case 3:
+
+                System.out.println("Retiro");
+                System.out.println("¿Cuanto deseas retirar?");
+                retiro = scan.nextDouble();
+                retirar(retiro);
+                System.out.println("Retirando...");
+                System.out.println("Gracias por tirar");
+                break;
+
+            case 4:
+
+                System.out.println("Transeferencia");
+                System.out.println("Cunato deseas Transferir");
+                retiro = scan.nextDouble();
+                retirar(retiro);
+                System.out.println("Ingresa la cuneta Destino");
+                cuenta = scan.nextInt();
+                System.out.println("Transferencia Exitos a cuenta");
+                System.out.println(cuenta);
+                break;
+
+            default:
+                System.out.println("Opcion incorrecta");
+                break;
         }
-
     }
 
-    void mesesDep(int b){
+    void sumar (double ing){
 
-        if(b == 1){
-            mensualidad = suma / 12;
-        }else if(b == 2) {
-            mensualidad = suma / 18;
-        }
+        Total = Total + ing;
+    }
+     double mostrarTotal(){
+        return Total;
+     }
 
-    }
-    double mostrarMeses(){
-        return mensualidad;
-    }
+     void retirar(double ret){
+        Total = Total - ret;
+     }
+
 }
-
-
-
-
