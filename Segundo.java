@@ -13,8 +13,9 @@ public class Segundo {
         for (int i = Arreglo2[val]; i<= Arreglo2[val]; i++){
             for (int j = 1; j <= 10; j++){
 
-                System.out.println(i + " * " + j + " = " + i * j);
+                System.out.println(i + " * " + j +  " = " + Arreglo2[val] * j);
             }
         }
+        }
     }
-}
+

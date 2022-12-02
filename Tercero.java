@@ -10,13 +10,15 @@ public class Tercero {
         }
     }
     void mostrarTablas(){
-        for (int i = 1; i<= Arreglo3.length; i++){
-            System.out.println("----------------------------------");
-            for (int j = 1; j <= Arreglo3.length; j++){
+        for (int p= 0; p< Arreglo3.length; p++){
+            System.out.println("----------------------------");
+            for (int i = Arreglo3[p]; i<= Arreglo3[p]; i++){
+                for (int j = 1; j <= 10; j++){
 
-                System.out.println(i + " * " + j + " = " + i * j);
-
+                    System.out.println(i + " * " +   " = " + Arreglo3[p] * j);
+                }
             }
         }
+
     }
 }
